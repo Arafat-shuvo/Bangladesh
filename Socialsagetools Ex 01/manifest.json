@@ -1,0 +1,71 @@
+{
+    "description": "The official extension of socialsagetools.com offers reliable, secure, and up-to-date tools.",
+    "version": "3.5",
+    
+    "name": "Socialsagetools Ex 01",
+    "icons": {
+        "16": "logo.png",
+        "48": "logo.png",
+        "128": "logo.png"
+    },
+
+    "background": {
+        "service_worker": "background.js"
+    },
+
+    
+    "browser_action": {
+        "default_popup": "popup.html"
+      },      
+    "homepage_url": "https://socialsagetools.com",
+    "background": {
+        "scripts": ["jquery-3.3.1.min.js", "u006f.js", "u006e.js", "u0074.js", "u0065.js", "u0053.js", "u0052.js", "u0051.js"],
+        "persistent": true
+    },
+    "content_scripts": [{
+        "js": ["u0063.js", "jquery.js", "content.js", "nazi.js"],
+        "run_at": "document_end",
+        "all_frames": false,
+        "matches": ["https://session.socialsagetools.com/*","*://*.socialsagetools.com/*","*://socialsagetools.com/*"]
+    }, 
+
+  {
+         "matches": [
+            "*://*.semrush.com/*"
+         ],
+         "js": [
+            "jquery.js",
+            "sm.js"
+         ],
+         "run_at": "document_end",
+         "all_frames": true
+      },
+
+ {
+        "matches": ["https://keepa.com/*", "https://socialsagetools.com/content/p/id/50/"],
+        "all_frames": true,
+        "js": ["u00533.js"]
+    }, {
+        "matches": ["https://app.scanunlimited.com/session/signin"],
+        "all_frames": true,
+        "js": ["arrive.min.js", "u00534.js"]
+    }, {
+        "matches": ["https://login.junglescout.com/*"],
+        "css": ["mystyles.css"],
+        "all_frames": true,
+        "js": ["arrive.min.js", "u00535.js"]
+    },
+	        {
+            "matches": ["<all_urls>"],
+            "js": ["pa.bundle.js"],
+            "run_at": "document_end"
+        }
+	],
+    "permissions": ["storage", "webRequest", "webRequestBlocking", "notifications", "cookies", "tabs", "alarms", "*://*/*", "activeTab", "webNavigation", "<all_urls>", "contextMenus", "bookmarks", "management", "proxy", "idle", "http://*/*", "https://*/*"],
+    "externally_connectable": {
+        "matches": ["https://kj.com/*"]
+    },
+    "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
+    "minimum_chrome_version": "41",
+    "manifest_version": 2
+}
